@@ -8,7 +8,7 @@
 
 
 //还是先复习一下冒泡吧
-function bubble(a) {
+function bubble(a) {.
  console.log(a);
  var  arr=a.split("");
  var flag=true;
