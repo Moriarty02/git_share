@@ -28,21 +28,21 @@ function bubble(a) {
 
 }
 
-var demo = [12, 43,  57, 6, 87, 8, 5, 54];
+var demo = [12, 43, 57, 6, 87, 8, 5, 54];
 
 function find_K_MAX_Bubble(a, k) { //a为待查找的数组，k为第K大
     //冒泡的方式去拿到第K大的数字
     var arr = a.slice("");
-    for (var i = 0, length = arr.length; i < length ; i++) {
-        for (var j = length-1; j > i; j--) {
+    for (var i = 0, length = arr.length; i < length; i++) {
+        for (var j = length - 1; j > i; j--) {
             if (arr[j] > arr[j - 1]) {
                 arr[j] ^= arr[j - 1];
                 arr[j - 1] ^= arr[j];
                 arr[j] ^= arr[j - 1];
             }
         }
-        if(i===k-1){
-        	return arr[i];
+        if (i === k - 1) {
+            return arr[i];
         }
     }
     return -1;
@@ -59,3 +59,42 @@ function find_K_MAX(a, low, high, k) {
 
 
 }
+
+function Partition(a, low, high) {
+    var povitkey = a[low];
+    while (low < high) {
+        while (low < high && a[high] >= povitkey)
+            high--;
+        a[low] ^= a[high];
+        a[high] ^= a[low];
+        a[low] ^= a[high];
+        while (low < high && a[low] <= povitkey)
+            low++;
+        a[low] ^= a[high];
+        a[high] ^= a[low];
+        a[low] ^= a[high];
+
+    }
+    return low;
+}
+
+function Quick_K_MAX(a, low, high, k) {
+    if (low >= high) {
+        return a[low];
+    } else {
+        var mid = Partition(a, low, high);
+        if (mid > k) {
+            Quick_K_MAX(a, low, mid - 1, k);
+        } else if (mid < k) {
+            Quick_K_MAX(a, mid + 1, high.k);
+        } else {
+        	console.log(a[mid])
+            return a[mid];
+        }
+
+    }
+
+}
+//测试代码
+var a = [10, 7, 8, 6, 3, 1, 5, 2, 4, 9];
+document.write(Quick_K_MAX(a, 0, a.length - 1, 2))

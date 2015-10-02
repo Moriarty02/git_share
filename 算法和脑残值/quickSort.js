@@ -14,19 +14,25 @@ function Qsort(a, low, high) {
 
 function Partition(a, low, high) {
     var povitkey = a[low];
+
     while (low < high) {
         while (low < high && povitkey <= a[high])
             high--;
-        a[low] ^= a[high];
-        a[high] ^= a[low];
-        a[low] ^= a[high];
+        swap(a[low], a[high]);
         while (low < high && povitkey >= a[low])
             low++;
-        a[low] ^= a[high];
-        a[high] ^= a[low];
-        a[low] ^= a[high];
-
-
+        swap(a[low], a[high]);
     }
     return low;
 }
+
+function swap(a, b) {
+    var temp;
+    temp = a;
+    a = b;
+    b = temp;
+    temp = null;
+}
+var a = [1, 2, 4, , 54, 6, 432, 432, 4, 325, 4, 53, 4]
+quickSort(a);
+document.write(a)
