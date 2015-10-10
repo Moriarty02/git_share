@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>测试多文件上传功能</title>
+    <style type="text/css">
+
+    </style>
+    <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <script type="text/javascript">
+    function test() {
+        console.log("in");
+        alert(arguments.callee.caller)
+    }
+
+    function callA() {
+        test();
+    }
+
+    function callB() {
+        test();
+    }
+    </script>
+</body>
+
+</html>
