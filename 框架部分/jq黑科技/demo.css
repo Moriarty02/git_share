@@ -1,0 +1,22 @@
+ * {
+     margin: 0;
+     padding: 0;
+ }
+ 
+ html,
+ body {
+     width: 100%;
+     height: 100%;
+     background: #dedede;
+     font-family: 'Microsoft Yahei'
+ }
+ 
+ #nav {
+     width: 100px;
+     height: 100px;
+     background: #6BE7CD;
+     list-style: none;
+ }
+.tclass{
+	border:1px solid red;
+}

@@ -33,6 +33,7 @@ var demo = [12, 43, 57, 6, 87, 8, 5, 54];
 function find_K_MAX_Bubble(a, k) { //a为待查找的数组，k为第K大
     //冒泡的方式去拿到第K大的数字
     var arr = a.slice("");
+    
     for (var i = 0, length = arr.length; i < length; i++) {
         for (var j = length - 1; j > i; j--) {
             if (arr[j] > arr[j - 1]) {

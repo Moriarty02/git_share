@@ -1,0 +1,22 @@
+
+@-webkit-keyframes myfirst
+/* Safari 和 Chrome */
+
+{
+	from {
+	
+		-webkit-transform: translateY(5em);
+	}
+	to {
+	
+		-webkit-transform: translateY(0em);
+	}
+} 
+
+.ball {
+	
+	
+	-webkit-animation: myfirst .5s infinite alternate;
+	/* Safari 和 Chrome */
+	
+}

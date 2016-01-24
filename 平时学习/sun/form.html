@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>form</title>
+    <style type="text/css">
+    .container{
+    	width: 360px;
+    	border: 1px solid #dedede;
+    }
+	form{
+		border-top: 3px solid #dedede;
+		padding: 5px;
+	}
+	p{
+		text-align: center;
+	}
+	button{
+		display: block;
+	}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+    <p>学生情况调查表</p>
+        <form action="localhost:8080/form/search" method="post">
+            <label>用户名：
+                <input type="text" name="" id="">
+            </label>
+            <br>
+            <label>密 码：
+                <input type="password">
+            </label>
+            <br>
+            <label>电子邮箱：
+                <input type="email" name="" id="">
+            </label>
+            <br>
+            <label>家庭住址:
+                <input type="address" name="" id="">
+            </label>
+            <br>
+            <label>就读的院系
+                <input type="text" name="" id="">
+            </label>
+            <br>
+            <label>个人爱好：</label><br>
+            <input name="love" type="checkbox"  value="跳舞" />跳舞<br>
+            <input name="love" type="checkbox"  value="唱歌" />唱歌<br>
+            <input name="love" type="checkbox"  value="打牌" />打牌<br>
+
+            <input name="love" type="checkbox"  value="阅读" />阅读<br>
+			<label>性别：</label>
+			<select>
+				<option>男</option>
+				<option>女</option>
+			</select><br>
+			<label >血型：</label>
+			<input type="radio" checked="checked">A
+			<input type="radio">B
+			<input type="radio">AB
+
+
+			<input type="radio">O
+		<button>提交查询内容</button>
+        </form>
+    </div>
+</body>
+
+</html>

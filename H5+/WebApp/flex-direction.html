@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="flex-header.css"/>
+		<style type="text/css">
+			
+			
+			h2 {
+				text-align: center;
+			}
+			
+			.box {
+				display: flex;
+				display: -webkit-flex;
+				margin: 0;
+				padding: 10px;
+				list-style: none;
+				background: #eee;
+				font-size: 16px;
+			}
+			
+			.box li {
+				width: 100px;
+				height: 100px;
+				line-height: 100px;
+				border: 1px solid #aaa;
+				text-align: center;
+			}
+			
+			#box1 {
+				flex-direction: row;
+				-webkit-flex-direction: row;
+			}
+			
+			#box2 {
+				flex-direction: row-reverse;
+			}
+			
+			#box3 {
+				flex-direction: column;
+			}
+			#box4{
+				flex-direction: column-reverse;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header> <a href="./index.html">返回</a></header>
+		<h2>flex-direction:row</h2>
+		<ul class="box" id="box1">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+
+		</ul>
+		<h2>flex-direction:row-reverse</h2>
+		<ul class="box" id="box2">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+
+		</ul>
+		<h2>flex-direction:column</h2>
+		<ul class="box" id="box3">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+
+		</ul>
+		<h2>flex-direction:column-reverse</h2>
+		<ul class="box" id="box4">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+
+		</ul>
+
+	</body>
+
+</html>

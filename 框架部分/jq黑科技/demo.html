@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>12个用得着的jquery代码片段</title>
+    <link rel="stylesheet" type="text/css" href="demo.css">
+    <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<style type="text/css">
+    .content{
+        background: yellow;
+        position: absolute;left: 0;top: 0
+    }
+
+</style>
+<body>
+    <div class="header">
+        <ul id="nav">
+            <li>导航1</li>
+            <li>导航2</li>
+            <li>导航3</li>
+        </ul>
+    </div>
+    <div class="content"></div>
+    <input type="text" class="searchBox">
+    <script type="text/javascript">
+    //导航栏切换class
+    /*$('#nav').hover(function(e){
+        $(e.target).addClass('tclass').siblings('.tclass').removeClass('tclass');
+    })*/
+    //逆序
+    var arr = $('#nav').find('li').get().reverse();
+    $.each(arr, function(index, ele) {
+            console.log(arr[index])
+        })
+        //搜索框内容控制
+    $('.searchBox').focus(function(e) {
+        console.log(e.target)
+        $(this).val("");
+    }).blur(function(event) {
+        /* Act on the event */
+        console.log(event.target)
+        var $this = $(this);
+        ($this.val() === '') ? $(this).val("请搜索"): null;
+    });
+
+
+    //缓存数据
+    var cache = {};
+    //缓存数据
+    $.data(cache, 'key', 'value');
+    //获取数据
+    $.data(cache, 'key')
+
+    //$冲突
+
+    //方法一： 为JQuery重新命名为 $j
+    var $j = jQuery.noConflict();
+    $j('#id')....
+
+    //方法二： 推荐使用的方式
+    (function($) {
+        $(document).ready(function() {
+            //这儿，你可以正常的使用JQuery语法
+        });
+    })(jQuery);
+
+    //一个铺满屏幕的div
+        (function(){
+            $('.content').css({
+                "width":$(window).width(),
+                'height':$(window).height()
+            });
+        window.resize(function(){
+            var $w=$(window);
+            $('.content').css({
+                'width':$w.width(),
+                'height':$w.height()
+
+            })
+
+        })
+
+
+        })()
+        //.使用JQuery重绘图片的大小
+          $(window).bind('load',function(){
+            $("body img").each(function(index, el) {
+            var maxHeight=120;
+            var maxWidth=120;
+            var ratio=0;
+            var width=$(this).width();
+            var height=$(this).height();
+            if(width>maxWidth){
+                    ratio=width/maxWidth;
+                 $(this).css("width",maxWidth);
+                 $(this).css('height',ratio*height);
+                 width=width*ratio;
+            }
+            var height=$(this).height();
+            var width=$(this).width();
+            if(height>maxHeight){
+                ratio=height/maxHeight;
+                $(this).css("height",maxHeight);
+                $(this).css('width',ratio*width);
+                height=height*ratio;
+            }
+
+            });
+
+          })  
+
+    </script>
+</body>
+</html>

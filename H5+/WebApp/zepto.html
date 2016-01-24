@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/zepto.css" />
+		<script type="text/javascript" src="js/zepto.js"></script>
+		<style type="text/css">
+			
+			@-webkit-keyframes myfirst
+			/* Safari 和 Chrome */
+			
+			{
+				0% {
+					
+					-webkit-transform: translateY(-3em);
+				}
+				
+				50% {
+					-webkit-transform: translateY(0em);
+				}
+				
+				100%{
+					-webkit-transform: translateY(-3em);
+				}
+			}
+			
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+			}
+			
+			header a {
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 2.5em;
+				height: 2em;
+				line-height: 2em;
+				color: #dedede;
+				border-radius: 8px;
+				background: #2187E7;
+				text-decoration: none;
+				text-align: center;
+			}
+			
+			header {
+				height: 8%;
+				line-height: 2em;
+				background: #dedede;
+				text-align: center;
+			}
+			
+			.g-main {
+				width: 100%;
+				height: 92%;
+				background: #8AC763;
+			}
+			
+			.left {
+				width: 30%;
+				height: 100%;
+				background-color: #93C763;
+				float: left;
+			}
+			
+			.right {
+				width: 70%;
+				height: 100%;
+				background: #DDDDDD;
+				float: left;
+			}
+			
+			.clearfix {
+				clear: both;
+			}
+			
+			.ball {
+				width: 3em;
+				height: 3em;
+				line-height: 3em;
+				text-align: center;
+				background: #800080;
+				border-radius: 50%;
+				position: relative;
+				top: 50%;
+				left: 50%;
+				margin-left: -1.5em;
+				margin-top: -1.5em;
+			}
+			
+			.active {
+			
+				
+				-webkit-animation: myfirst 1s infinite ;
+				
+			}
+		</style>
+	</head>
+
+	<body>
+		<header><a href="./index.html">返回</a>
+			<p>测试zepto API</p>
+		</header>
+		<div class="g-main">
+			<div class="left"></div>
+			<div class="right">
+
+				<div class="ball active">ball</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<script type="text/javascript">
+		</script>
+	</body>
+
+</html>

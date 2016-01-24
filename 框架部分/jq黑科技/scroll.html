@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>滚动加载代码</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    var loading = false;
+    $(window).scroll(function() {
+        if ((($(window).scrollTop() + $(window).height()) + 250) >= $(document).height()) {
+            if (loading == false) {
+                loading = true;
+                $('#loadingbar').css("display", "block");
+                $.get("load.php?start=" + $('#loaded_max').val(), function(loaded) {
+                    $('body').append(loaded);
+                    $('#loaded_max').val(parseInt($('#loaded_max').val()) + 50);
+                    $('#loadingbar').css("display", "none");
+                    loading = false;
+                });
+            }
+        }
+    });
+
+    $(document).ready(function() {
+        $('#loaded_max').val(50);
+    });
+    //repeat
+    var loading = false;
+    $(window).scroll(function() {
+        if ($(window).scrollTop() + $(window).height() + 250) >= $(document).height()) {
+        if (loading == false) {
+            loading = true;
+            $('#loadingbar').css('display', 'block');
+            $.get('load.php?start=' + $('#loaded_MAX').val()),
+                function(loaded) {
+                    $(body).append('loaded');
+                    $('#loaded_max').val(parseInt($('#loaded_max').val() + 50); $('loadingbar').css('display', 'none'); loading = false;
+
+                    }
+
+                }
+
+
+        }
+
+    })
+    $(document).ready(function() {
+        $('loadingbar').val(50);
+
+    })
+    </script>
+</body>
+
+</html>

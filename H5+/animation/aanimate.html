@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>测试贝塞尔曲线</title>
+    <style type="text/css">
+    @keyframes move {
+        from {
+            left: 0;
+        }
+        to {
+            left: 80%;
+        }
+    }
+    @keyframes ball{
+	from{
+		-webkit-transform: translate(2px) rotate(0deg);
+		 -ms-transform: translate(2px) rotate(0deg);
+		 -o-transform: translate(2px) rotate(0deg);
+		 transform: translate(2px) rotate(0deg); 
+	}
+	to{
+		-webkit-transform: translate(500px) rotate(360deg);
+		-ms-transform: translate(500px) rotate(360deg);
+		-o-transform: translate(500px) rotate(360deg);
+		transform: translate(500px) rotate(360deg);
+	}
+
+    };
+
+    .box {
+        width: 10em;
+        height: 10em;
+        background: red;
+        border-radius: 50%;
+        position: absolute;
+        -webkit-animation: move 5s ease-out infinite alternate;
+        -o-animation: move 5s ease-out infinite alternate;
+        animation: move 5s ease-out infinite alternate;
+    }
+    
+    .container {
+        width: 600px;
+        height: 100px;
+        margin-top: 10em;
+        background: #dedede;
+        position: absolute;
+    }
+    
+    div.ball {
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+        border-radius: 50%;
+        background: #20ECF2;
+        font-size: 80px;
+        -webkit-animation: ball 3s cubic-bezier() infinite alternate;
+        -o-animation: ball 3s infinite alternate;
+        animation: ball 3s infinite alternate;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <div class="container">
+        <div class="ball">A</div>
+    </div>
+</body>
+
+</html>

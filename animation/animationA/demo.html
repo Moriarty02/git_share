@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>animation1</title>
+    <style type="text/css">
+    @keyframes emphasis {
+        0% {
+            transform: scale(1);
+            opacity: 1;
+        }
+        39% {
+            transform: scale(.5);
+            opacity: .5;
+        }
+        78.75% {
+            transform: scale(.667);
+            opacity: .667;
+        }
+        100% {
+            transform: scale(.6);
+            opacity: .6;
+        }
+    }
+    
+    .animate {
+        animation: emphasis 700ms ease-in-out 10ms infinite alternate forwards;
+    }
+    
+    .toAnimate {
+        width: 100px;
+        height: 100px;
+        background: #1DD4FA;
+        border-radius: 50%;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="toAnimate" id="toAnimate"></div>
+    <div class="toAnimate animate" id="toAnimate2"></div>
+</body>
+<script type="text/javascript">
+var player = document.getElementById('toAnimate').animate([{
+    transform: 'scale(1)',
+    opacity: 1,
+    offset: 0
+}, {
+    transform: 'scale(.5)',
+    opacity: .5,
+    offset: .3
+}, {
+    transform: 'scale(.667)',
+    opacity: .667,
+    offset: .7875
+}, {
+    transform: 'scale(.6)',
+    opacity: .6,
+    offset: 1
+}], {
+    duration: 700, //milliseconds
+    easing: 'ease-in', //'linear', a bezier curve, etc.
+    delay: 10, //milliseconds
+    iterations: Infinity, //or a number
+    direction: 'alternate', //'normal', 'reverse', etc.
+    fill: 'forwards' //'backwards', 'both', 'none', 'auto'
+});
+</script>
+
+</html>

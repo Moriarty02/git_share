@@ -1,0 +1,33 @@
+html {
+				font-size: 62.5%;
+			}
+			
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+			}
+			
+			body {
+				margin: 0;
+				padding: 0;
+				background: #dedede;
+			}
+			
+			header {
+				height: 3em;
+			}
+			
+			header a {
+				font-size: 15px;
+				float: left;
+				width: 3em;
+				height: 2em;
+				line-height: 2em;
+				background: #2187E7;
+				text-decoration: none;
+				border-bottom-right-radius: 4px;
+			}
+			h2{
+				text-align: center;
+			}

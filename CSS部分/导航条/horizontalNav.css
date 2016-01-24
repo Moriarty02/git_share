@@ -1,0 +1,44 @@
+html,
+body {
+    font-family: "Microsoft Yahei";
+}
+
+ol.pagination {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+ol.pagination li {
+    float: left;
+    padding-left: .6em;
+}
+
+ol.pagination a,
+ol.pagination li.selected {
+    display: block;
+    padding: 0.2em 0.5em;
+    border: 1px solid #ccc;
+    text-decoration: none;
+}
+
+ol.pagination a:hover,
+ol.pagination a:focus {
+    background: blue;
+    color: white;
+}
+
+ol a[rel='prev'],
+ol a[rel='next'] {
+    border: none;
+}
+
+a[rel='prev']:before {
+    content: "\00AB";
+    padding-right: 0.5em
+}
+
+a[rel="next"]:after {
+    content: '\00BB';
+    padding-left: 0.5em
+}

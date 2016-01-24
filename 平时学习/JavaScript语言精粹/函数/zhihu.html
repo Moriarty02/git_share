@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>知乎问题</title>
+</head>
+
+<body>
+</body>
+<script type="text/javascript">
+function a(b) {
+
+    console.log(b)
+
+    b = function c() {
+        b = 2;
+        c = 3;
+        console.log(b)
+        console.log(c)
+    }
+
+    b()
+
+}
+
+a(0)
+//开始瞎掰，谁家代码都不会这样写，这里只是作为对js作用域以及函数构建的一个考察而已
+//关于作用域,js只有函数作用域，子集作用域可以访问父集作用域的变量，就近访问
+//函数的构建，函数构建的时候，对于内部环境来说，
+//第一步，完成arguments的初始化，完成完整的声明和赋值两个操作，this指针，以及父集的参数可访问
+//第二步，完成内部函数的声明
+//第三步，完成函数内部的变量的声明，包括字面量形式的函数声明，但声明只是声明变量，值为undefined
+//代码顺序执行
+//window下(全局作用域) 参数 a function b function(变量没有var 就是全局下的)
+//执行a，进入a的作用域，此时b作为arguments，接收参数0，被声明以及赋值第一个console.log,访问到函数内部作用域有一个变量也就是b=0，就不会去查找父级作用域，所以log(2)
+//接下来b被从新赋值为函数，但是在c函数内部，根据上边的就近访问，那么第一个console.log()返回最近的b=2，而不是父级的function c() ,
+//最后就是c了,确定两点c=3 是全局下的也就是window下创建的，
+//b = function c() {}这种形式的c只能能在b函数内部作为arguments.callee使用，外部无法访问
+//根据就近，最近的肯定是函数内部使用c(arguments.callee)啦
+
+
+
+</script>
+<script type="text/javascript">
+    var name="ademmo ";
+    var dway=function(){
+        this.name=name;
+        this.age=age;
+    }
+
+</script>
+</html>

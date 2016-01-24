@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="flex-header.css" />
+		<style type="text/css">
+			.box {
+				display: flex;
+				display: -webkit-flex;
+				list-style: none;
+				font-size: 16px;
+			}
+			
+			.box li {
+				width: 150px;
+				height: 100px;
+				border: 1px solid #aaa;
+				text-align: center;
+			}
+			#box{
+				flex-wrap: nowrap;
+				
+			}
+			#box2{
+				flex-wrap: wrap;
+			}
+			#box3{
+				flex-wrap: wrap-reverse;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header> <a href="./index.html">返回</a></header>
+		<h2>flex-wrap:no-wrap</h2>
+		<ul id="box" class="box">
+			<li>a</li>
+			<li>b</li>
+			<li>c</li>
+		</ul>
+		<h2>flex-wrap:wrap</h2>
+		<ul id="box2" class="box">
+			<li>a</li>
+			<li>b</li>
+			<li>c</li>
+		</ul>
+		<h2>flex-wrap:wrap-reverse</h2>
+		<ul id="box3" class="box">
+			<li>a</li>
+			<li>b</li>
+			<li>c</li>
+		</ul>
+	</body>
+
+</html>
